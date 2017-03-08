@@ -1,0 +1,118 @@
+body {
+    background: #262525 none repeat scroll 0 0;
+}
+
+
+#main_content {
+    background: 1px solid #404040;
+}
+
+a, p, h1, h2, h4, span {
+    color: white;
+}
+
+header {
+    background: black;
+    border-bottom: 1px solid #666;
+    padding: 8px;
+}
+
+#secondary_menu {
+    background: #212121 none repeat scroll 0 0;
+    border-bottom: 1px solid #666;
+    padding: 8px;
+}
+
+li {
+    padding: 15px;
+    list-style: none;
+
+}
+li#episodes_li {
+    border-top: 1px solid #4d4d4d;
+}
+
+li#programmes_li {
+    border-bottom: 1px solid #4d4d4d;
+}
+
+li:hover {
+    background: rgba(245, 73, 151, 0.25) none repeat scroll 0 0;
+    border-top: 1px solid #666;
+}
+
+h4:hover {
+    color: #f54997;
+}
+.search {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #4a4848 none repeat scroll 0 0;
+    border-color: -moz-use-text-color -moz-use-text-color #707070;
+    border-image: none;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    margin-top: 8px;
+    padding-right: 8px;
+    margin-bottom: 20px;
+}
+
+#search_input {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    color: #efefef;
+    font-size: 1.2em;
+    padding: 8px;
+    display: inline-block;
+    width: 95%;
+
+}
+
+.empty_result {
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+#loading-image {
+    display: none;
+    text-align: center;
+    padding: 10px;
+}
+
+#loading-image img {
+    width: 128px;
+    height: 128px;
+}
+
+.search_button {
+    color: #efefef;
+    display: inline-block;
+    text-align: right;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: url("../images/search.png");
+}
+
+.episodes_list {
+    display: none;
+}
+
+.episodes_list h5,
+.show_episodes,
+.hide_episodes {
+    color: #f54997;
+}
+
+h5:hover {
+    text-decoration: underline;
+}
+
+.episodes_list span {
+    font-size: 10px;
+    color: white;
+}

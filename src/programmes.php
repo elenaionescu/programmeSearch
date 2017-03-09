@@ -50,7 +50,11 @@ class Programmes
         }
         return $output;
     }
-	
+
+    /*
+     * Return a JSON with all the programmes titles
+     *
+     */
 	public function getAllProgrammesTitles() {
         $allProgrammes = $this->programmesCurl("GET", array();
 
@@ -61,7 +65,7 @@ class Programmes
             $k++;
         }
 
-        return $programmes;
+        return json_encode($programmes);
     }
 
     /**

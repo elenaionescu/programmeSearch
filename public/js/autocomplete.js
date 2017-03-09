@@ -5,8 +5,8 @@
     var programmes = "programmes.json";
 
     /**
-     * Create the options from the capitals array
-     * @param {Array} capitals
+     * Create the options from the programmes array
+     * @param {Array} programmes
      */
     function createList(programmes) {
         // get the datalist element

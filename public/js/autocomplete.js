@@ -2,7 +2,7 @@
     'use strict';
 
     // The JSON list url
-    var programmes = "programmes.json";
+    var programmes = "../programmes.json";
 
     /**
      * Create the options from the programmes array

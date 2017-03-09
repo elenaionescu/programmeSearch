@@ -54,7 +54,6 @@ class Programmes
 	public function getAllProgrammesTitles() {
         $allProgrammes = $this->programmesCurl("GET", array();
 
-        $output = '';
         $programmes = array();
         $k = 0;
         foreach ($allProgrammes as $key => $program) {

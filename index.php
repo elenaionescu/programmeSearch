@@ -48,11 +48,11 @@ mb_http_output('UTF-8');
      <h1 class='page_title'>Search Programmes</h1>
      <div class='search'>
          <form method="post">
-         	<input id="search_input" class="search_input_class" type="search" placeholder="Search for a programme title" name="q">
+         	<input id="search_input" class="search_input_class" type="search" placeholder="Search for a programme title" name="q" list="programmeslist">
          	<button class="search_button" type="submit" name='search_submit' value='search_submit'>
         </form>
      </div>
-	 <datalist id="programmelist"></datalist>
+	 <datalist id="programmeslist"></datalist>
        <div id="loading-image"> <img src='http://gora.se/wp-content/themes/gora/imgs/ajax-loader.gif' /> </div>
        <div id='returned_result'> </div>
       <?php include('src/display.php');?>

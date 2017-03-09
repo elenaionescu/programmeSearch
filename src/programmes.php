@@ -25,16 +25,43 @@ class Programmes
         }
     }
 
-    public function getProgrammes($params = array()) {
-        $allProgrammes = $this->programmesCurl("GET", $params);
+    public function getProgrammes($keyword) {
+        $allProgrammes = $this->programmesCurl("GET", array('search' => $keyword));
 
+        $output = '';
         $programmes = array();
+        $k = 0;
         foreach ($allProgrammes as $key => $program) {
+            if (stripos($program['programme']['title'], $keyword) !== false) {
+                $programmes[$k]['title'] = $program['programme']['title'];
+                $programmes[$k]['short_synopsis'] = $program['programme']['short_synopsis'];
+                $programmes[$k]['pid'] = $program['programme']['image']['pid'];
 
-            $programmes[$key]['title'] = $program['programme']['title'];
-            $programmes[$key]['short_synopsis'] = $program['programme']['short_synopsis'];
-            $programmes[$key]['pid'] = $program['programme']['image']['pid'];
+                $output .='<ul>';
+                $output .= $this->renderResult($programmes[$k]);
+                $output .='</ul>';
+                $k++;
+            }
+
         }
-        return $programmes;
+
+        if (empty($programmes)) {
+            $output = '<div class="empty_result">There are no results</div>';
+        }
+        return $output;
+    }
+
+    /**
+     *  Function to render the result in nice HTML list
+     */
+    public function renderResult($programme) {
+        $output = '<li class="col-sm-12" id="programmes_li">';
+        $output .= '<div class="col-sm-3"><a target="_blank" href="javascript:"><img class="img-responsive" src="https://ichef.bbci.co.uk/images/ic/480x270/' . $programme['pid'] . '.jpg" /></a></div>';
+        $output .= '<div class="col-sm-9"><a target="_blank" href="javascript:"><h4>' . $programme['title'] . '</h4>';
+        $output .= '<span>' . $programme['short_synopsis'] . '</span><br /><br />';
+        $output .= '</a>';
+        $output .= '</div></li>';
+
+        return $output;
     }
 }

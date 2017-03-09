@@ -50,6 +50,20 @@ class Programmes
         }
         return $output;
     }
+	
+	public function getAllProgrammesTitles() {
+        $allProgrammes = $this->programmesCurl("GET", array();
+
+        $output = '';
+        $programmes = array();
+        $k = 0;
+        foreach ($allProgrammes as $key => $program) {
+        	$programmes[$k]['title'] = $program['programme']['title'];
+            $k++;
+        }
+
+        return $programmes;
+    }
 
     /**
      *  Function to render the result in nice HTML list
